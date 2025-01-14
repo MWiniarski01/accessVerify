@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: access-verifier-config
+data:
+  config.json: |
+    {
+      "AWS_IP_RANGES_URL": "https://ip-ranges.amazonaws.com/ip-ranges.json",
+      "LOCAL_IP_RANGE": "192.168.49.1/32",
+      "TARGET_REGION": "eu-west-1",
+      "FLASK_HOST": "0.0.0.0",
+      "FLASK_PORT": 8080
+    }

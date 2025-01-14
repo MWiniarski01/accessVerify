@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-data-manager
+  labels:
+    app: client-data-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-data-manager
+  template:
+    metadata:
+      labels:
+        app: client-data-manager
+    spec:
+      containers:
+      - name: client-data-manager
+        image: acrobaticice/client_data_manager:0.1
+        ports:
+        - containerPort: 8081
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
